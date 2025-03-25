@@ -25,7 +25,7 @@ const Carousel = () => {
       alt="hero-2"
       fill
       className="object-cover"
-      loading="lazy"
+      priority
       sizes={"100vw"}
     />,
     <Image
@@ -34,7 +34,6 @@ const Carousel = () => {
       alt="hero-3"
       fill
       className="object-cover"
-      loading="lazy"
       sizes={"100vw"}
     />,
     <Image
@@ -43,7 +42,6 @@ const Carousel = () => {
       alt="hero-4"
       fill
       className="object-cover"
-      loading="lazy"
       sizes={"100vw"}
     />,
   ];
