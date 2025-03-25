@@ -91,7 +91,7 @@ export default function ContactPage() {
             result || "Failed to send message. Please try again later.",
           );
         }
-      } catch (error) {
+      } catch {
         setIsSuccess(false);
         setSendRes("An error occurred. Please try again later.");
       } finally {

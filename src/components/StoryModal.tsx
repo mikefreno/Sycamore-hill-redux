@@ -87,10 +87,10 @@ export default function StoryModal() {
 
             <p className="mb-4">
               Bob, a retired engineer with roots in South Jersey, developed his
-              love for agriculture visiting his uncle's farm in Vineland. His
-              path crossed with Mary Kay at a local vineyard, and their shared
-              passion for wine led to marriage in Napa Valley, where the dream
-              of their own vineyard was born.
+              love for agriculture visiting his uncle&apos;s farm in Vineland.
+              His path crossed with Mary Kay at a local vineyard, and their
+              shared passion for wine led to marriage in Napa Valley, where the
+              dream of their own vineyard was born.
             </p>
 
             <p className="mb-4">

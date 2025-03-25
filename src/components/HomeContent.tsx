@@ -10,7 +10,7 @@ export default function HomeContent() {
           Established in 2022, Sycamore Hill Vineyard focuses on producing
           premium wine grapes through meticulous vineyard management. Our 3.4
           acres feature Cabernet Sauvignon and Cabernet Franc varietals that
-          thrive in New Jersey's unique terrain.
+          thrive in New Jersey&apos;s unique terrain.
         </p>
 
         <p className="mb-6">
