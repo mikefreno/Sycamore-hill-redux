@@ -5,7 +5,7 @@ import Carousel from "@/components/Carousel";
 export default function Home() {
   return (
     <>
-      <div className="relative h-screen w-full">
+      <div style={{ height: "100svh" }} className="relative w-full">
         <Carousel />
         <svg
           viewBox="0 0 1440 1440"
