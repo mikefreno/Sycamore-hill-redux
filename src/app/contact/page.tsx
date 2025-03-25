@@ -15,7 +15,6 @@ export default function ContactPage() {
   const [countDown, setCountDown] = useState<number>(0);
   const timerIdRef = useRef<number | NodeJS.Timeout | null>(null);
 
-  // Calculate remaining time from cookie
   const calcRemainder = (timer: string) => {
     const expires = new Date(timer);
     const remaining = expires.getTime() - Date.now();
@@ -111,14 +110,14 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="flex-1 bg-gradient-to-b from-white to-lime-50 mt-16">
+    <div className="min-h-screen bg-gradient-to-b from-white to-lime-50 mt-16">
       <div className="container mx-auto max-w-4xl px-4 mt-[10%]">
         <div className="relative mb-12 text-center">
           <h1 className="text-4xl font-bold text-lime-800 mb-3">Contact Us</h1>
           <p className="text-lime-700 max-w-2xl mx-auto">
-            We'd love to hear from you! Whether you're interested in our grapes,
-            have questions about our vineyard, or want to schedule a visit,
-            please reach out.
+            We&apos;d love to hear from you! Whether you&apos;re interested in
+            our grapes, have questions about our vineyard, or want to schedule a
+            visit, please reach out.
           </p>
           <div className="absolute -z-10 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 rounded-full bg-lime-100 opacity-50 blur-3xl"></div>
         </div>
@@ -140,7 +139,7 @@ export default function ContactPage() {
                   Woolwich Township, New Jersey
                 </p>
                 <p className="text-sm opacity-90">
-                  info@sycamorehillvineyard.com
+                  bob@sycamorehillvineyard.com
                 </p>
               </div>
             </div>
@@ -252,9 +251,6 @@ export default function ContactPage() {
           <p>
             You can also reach us by phone at{" "}
             <span className="font-semibold">(555) 123-4567</span>
-            <br />
-            Or by email at{" "}
-            <span className="font-semibold">bob@sycamorehillnj.com</span>
           </p>
         </div>
       </div>

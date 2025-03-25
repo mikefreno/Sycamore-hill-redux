@@ -88,7 +88,7 @@ export default function StoryModal() {
             <p className="mb-4">
               Bob, a retired engineer with roots in South Jersey, developed his
               love for agriculture visiting his uncle's farm in Vineland. His
-              path crossed with Mary Kay's at a local vineyard, and their shared
+              path crossed with Mary Kay at a local vineyard, and their shared
               passion for wine led to marriage in Napa Valley, where the dream
               of their own vineyard was born.
             </p>
@@ -96,8 +96,8 @@ export default function StoryModal() {
             <p className="mb-4">
               In 2022, they transformed 17 acres of fertile farmland into
               Sycamore Hill Vineyard, planting 1.7 acres each of Cabernet
-              Sauvignon and Cabernet Franc. The vineyard's first harvest in 2024
-              marked a significant milestone, celebrated with family and
+              Sauvignon and Cabernet Franc. The vineyard&apos;s first harvest in
+              2024 marked a significant milestone, celebrated with family and
               friends.
             </p>
 
