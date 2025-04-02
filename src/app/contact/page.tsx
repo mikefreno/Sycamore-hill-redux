@@ -111,7 +111,7 @@ export default function ContactPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-lime-50 mt-16">
-      <div className="container mx-auto max-w-4xl px-4 mt-[10%]">
+      <div className="container mx-auto max-w-4xl px-4 mt-[10%] py-12">
         <div className="relative mb-12 text-center">
           <h1 className="text-4xl font-bold text-lime-800 mb-3">Contact Us</h1>
           <p className="text-lime-700 max-w-2xl mx-auto">

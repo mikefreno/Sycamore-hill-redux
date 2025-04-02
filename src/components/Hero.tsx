@@ -1,36 +1,15 @@
-import Carousel from "@/components/Carousel";
+import VideoHero from "./VideoHero";
 
 export default function HeroSection() {
   return (
-    <div style={{ height: "100svh" }} className="relative w-full">
-      <Carousel />
+    <div style={{ maxHeight: "100svh" }} className="relative w-full">
+      <VideoHero />
       <svg
         viewBox="0 0 1440 1440"
-        className="absolute inset-0 w-full h-full z-0"
+        className="absolute inset-0 w-full pointer-events-none h-full z-0"
         preserveAspectRatio="none"
       >
         <defs>
-          <linearGradient
-            id="wave-gradient-1"
-            x1="0%"
-            y1="100%"
-            x2="100%"
-            y2="0%"
-          >
-            <stop
-              offset="0%"
-              style={{ stopColor: "#65a30d", stopOpacity: 0.2 }}
-            />
-            <stop
-              offset="70%"
-              style={{ stopColor: "#84cc16", stopOpacity: 0.8 }}
-            />
-            <stop
-              offset="100%"
-              style={{ stopColor: "#a3e635", stopOpacity: 0.9 }}
-            />
-          </linearGradient>
-
           <linearGradient
             id="wave-gradient-2"
             x1="0%"
@@ -68,19 +47,17 @@ export default function HeroSection() {
           </filter>
         </defs>
 
-        {/* Second dramatic sine wave layer with a slight variation */}
         <path
           d="M0,1300 C480,1200 960,1400 1440,1300 L1440,1440 L0,1440 Z"
           fill="url(#wave-gradient-2)"
           opacity="0.9"
           filter="url(#wave-blur)"
         />
-
         <rect
           x="0"
-          y="1100"
+          y="1140"
           width="1440"
-          height="340"
+          height="300"
           fill="url(#fade-gradient)"
         />
       </svg>

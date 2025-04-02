@@ -1,13 +1,38 @@
+"use client";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export default function Navbar() {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    let prevScrollPos = window.pageYOffset;
+
+    const handleScroll = () => {
+      const currentScrollPos = window.pageYOffset;
+      if (prevScrollPos > currentScrollPos || currentScrollPos < 20) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+      prevScrollPos = currentScrollPos;
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm h-16">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-sm shadow-sm h-16 transition-transform duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 h-full relative flex items-center">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <Link href="/" className="flex items-center justify-center">
             <BranchSvg className="h-6 w-20 text-lime-600 transform -scale-x-100" />
-            <h1 className="text-black-600 font-serif text-2xl mx-4 tracking-wide text-center">
+            <h1 className="text-black font-serif text-2xl mx-4 tracking-wide text-center">
               Sycamore Hill Vineyard
             </h1>
             <BranchSvg className="h-6 w-20 text-lime-600" />

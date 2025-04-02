@@ -1,7 +1,7 @@
 "use client";
 import { useOnClickOutside } from "@/utils/hooks";
-import Image from "next/image";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Carousel from "./Carousel";
 
 export default function StoryModal() {
   const modalRef = useRef(null);
@@ -9,6 +9,17 @@ export default function StoryModal() {
   const [showing, setShowing] = useState(false);
 
   useOnClickOutside([modalRef, buttonRef], () => setShowing(false));
+
+  useEffect(() => {
+    if (showing) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showing]);
 
   return (
     <>
@@ -64,13 +75,8 @@ export default function StoryModal() {
             </h2>
 
             <div className="-mx-4 py-4 md:-mx-10">
-              <div className="relative h-[30vh] w-full">
-                <Image
-                  src="/photos/landscape/Background - Our Story.JPG"
-                  alt="Our Story"
-                  fill
-                  className="object-cover"
-                />
+              <div className="relative h-[40vh] w-full">
+                <Carousel showing={showing} />
               </div>
             </div>
 
@@ -81,7 +87,7 @@ export default function StoryModal() {
             <p className="mb-4">
               Sycamore Hill Vineyard represents the shared dream of Bob and Mary
               Kay Freno. Located in Woolwich Township, New Jersey, just outside
-              the Outer Coastal Plain AVA.
+              the Outer Coastal Plain AVA
             </p>
 
             <p className="mb-4">
