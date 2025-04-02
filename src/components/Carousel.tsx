@@ -28,7 +28,7 @@ interface ImageWithLoaderProps {
 const ImageWithLoader = (props: ImageWithLoaderProps) => {
   const [loaded, setLoaded] = useState(false);
 
-  const handleLoadingComplete = (result: any) => {
+  const handleLoadingComplete = () => {
     setLoaded(true);
   };
 

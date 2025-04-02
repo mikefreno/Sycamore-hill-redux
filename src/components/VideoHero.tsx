@@ -16,7 +16,7 @@ export default function VideoHero() {
 
   useEffect(() => {
     const video = document.getElementById("hero");
-    video?.addEventListener("play", function (e) {
+    video?.addEventListener("play", function () {
       setIsPlaying(true);
     });
   }, []);
