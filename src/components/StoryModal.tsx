@@ -12,19 +12,19 @@ export default function StoryModal() {
 
   return (
     <>
-      <div className="w-screen flex justify-center">
+      <div className="w-3xl max-w-1/2">
         <button
           ref={buttonRef}
           onClick={() => setShowing(true)}
-          className=" bg-lime-600 z-40 hover:bg-lime-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105"
+          className=" bg-lime-600 z-40 hover:bg-lime-700 w-full text-white my-8 font-bold py-3 px-8 rounded-full shadow-lg transition-all transform hover:scale-105"
         >
           Our Story
         </button>
       </div>
       <div
         className={`${
-          showing ? "opacity-100" : "opacity-0 pointer-events-none"
-        } fixed inset-0 z-50 w-full h-screen flex items-center justify-center overflow-hidden backdrop-blur-sm backdrop-brightness-75 transition-opacity duration-500`}
+          showing ? "opacity-100" : "opacity-0 pointer-events-none z-0"
+        } fixed top-0 left-0 z-50 w-screen h-screen flex items-center justify-center overflow-hidden backdrop-blur-sm backdrop-brightness-75 transition-opacity duration-500`}
       >
         <div
           ref={modalRef}
@@ -81,8 +81,7 @@ export default function StoryModal() {
             <p className="mb-4">
               Sycamore Hill Vineyard represents the shared dream of Bob and Mary
               Kay Freno. Located in Woolwich Township, New Jersey, just outside
-              the Outer Coastal Plain AVA, our vineyard embodies our deep
-              connection to the land.
+              the Outer Coastal Plain AVA.
             </p>
 
             <p className="mb-4">

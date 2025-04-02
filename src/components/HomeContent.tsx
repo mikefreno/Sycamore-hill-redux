@@ -1,6 +1,8 @@
+import Link from "next/link";
+
 export default function HomeContent() {
   return (
-    <div className="relative z-10 max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
+    <div className="relative z-10 max-w-4xl mx-auto px-6 pt-24 text-center">
       <h1 className="text-4xl font-bold text-lime-800 mb-6">
         Sycamore Hill Vineyard
       </h1>
@@ -32,16 +34,17 @@ export default function HomeContent() {
         </ul>
 
         <p className="mb-6">
-          As new market entrants, we offer early partners the opportunity to
-          establish exclusive relationships for future harvests.
+          We look forward to talking about how our grapes can enhance your
+          winemaking process.
         </p>
-
-        <a
-          href="/contact"
-          className="inline-block bg-lime-700 hover:bg-lime-800 text-white font-bold py-2 px-6 rounded-full transition-colors"
-        >
-          Contact Us
-        </a>
+        <div className="flex flex-col">
+          <Link
+            href="/contact"
+            className=" bg-lime-600 z-40 hover:bg-lime-700 text-white font-bold py-3 px-8 mb-4 rounded-full shadow-lg transition-all transform hover:scale-105 mx-auto"
+          >
+            Contact Us
+          </Link>
+        </div>
       </div>
     </div>
   );

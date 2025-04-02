@@ -6,18 +6,17 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 h-full relative flex items-center">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
           <Link href="/" className="flex items-center justify-center">
-            <BranchSvg className="h-6 w-20 text-amber-600 transform -scale-x-100" />
-            <h1 className="text-amber-600 font-serif text-2xl mx-4 tracking-wide text-center">
-              Sycamore Hill
+            <BranchSvg className="h-6 w-20 text-lime-600 transform -scale-x-100" />
+            <h1 className="text-black-600 font-serif text-2xl mx-4 tracking-wide text-center">
+              Sycamore Hill Vineyard
             </h1>
-            <BranchSvg className="h-6 w-20 text-amber-600" />
+            <BranchSvg className="h-6 w-20 text-lime-600" />
           </Link>
         </div>
-
         <div className="ml-auto hidden sm:block">
           <Link
             href="/contact"
-            className="text-lime-800 hover:text-lime-600 font-medium px-4 py-2 rounded-full border border-amber-600/30 hover:border-amber-600 transition-colors duration-200"
+            className="text-lime-700/80 hover:text-lime-700 font-medium px-4 py-2 rounded-full border border-black/30 hover:border-black transition-colors duration-200"
           >
             Contact Us
           </Link>
