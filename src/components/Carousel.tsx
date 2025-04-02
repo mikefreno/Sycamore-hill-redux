@@ -360,7 +360,7 @@ const Carousel = ({ showing }: { showing: boolean }) => {
           <button
             key={index}
             onClick={() => goToSlide(index)}
-            className={`w-3.5 h-3.5 mx-1 rounded-full transition-all duration-300 sm:w-4 sm:h-4 ${
+            className={`w-3.5 h-3.5 mx-1 z-50 rounded-full transition-all duration-300 sm:w-4 sm:h-4 ${
               index === currentIndex
                 ? "bg-white scale-110"
                 : "bg-white/50 hover:bg-white/75"

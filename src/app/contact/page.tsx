@@ -126,7 +126,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-2">
             <div className="relative h-48 md:h-auto">
               <Image
-                src="/photos/landscape/1.JPG"
+                src="/photos/1 - Planting April 2022 Year 1.jpg"
                 alt="Vineyard"
                 fill
                 className="object-cover"
@@ -246,13 +246,12 @@ export default function ContactPage() {
             </div>
           </div>
         </div>
-
-        <div className="mt-12 text-center text-lime-700">
+        {/*<div className="mt-12 text-center text-lime-700">
           <p>
             You can also reach us by phone at{" "}
             <span className="font-semibold">(555) 123-4567</span>
           </p>
-        </div>
+        </div>*/}
       </div>
     </div>
   );
