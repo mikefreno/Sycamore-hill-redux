@@ -7,6 +7,11 @@ export default function VideoHero() {
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isEnded, setIsEnded] = useState<boolean>(false);
   const [hasStarted, setHasStarted] = useState<boolean>(false);
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     if (isPlaying && !hasStarted) {
@@ -39,7 +44,7 @@ export default function VideoHero() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative bg-white">
       <video
         id={"hero"}
         ref={videoRef}
@@ -66,7 +71,7 @@ export default function VideoHero() {
         }}
       />
 
-      {!hasStarted && !isPlaying && !isEnded && (
+      {isMounted && !hasStarted && !isPlaying && !isEnded && (
         <div className="absolute inset-0 flex justify-center z-10 pointer-events-none items-center">
           <div className="bg-zinc-100 rounded-full p-4 z-50 transition-opacity duration-500 animate-spin">
             <svg
