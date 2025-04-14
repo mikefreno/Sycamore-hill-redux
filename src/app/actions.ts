@@ -20,7 +20,7 @@ export async function sendContactRequest({
   if (remaining <= 0) {
     if (message && message.length <= 500) {
       const apiKey = process.env.BREVO_KEY as string;
-      const apiUrl = "https://api.brevo.com/v3/smtp/email ";
+      const apiUrl = "https://api.brevo.com/v3/smtp/email";
 
       const brevoData = {
         sender: {

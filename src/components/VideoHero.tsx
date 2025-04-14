@@ -39,24 +39,12 @@ export default function VideoHero() {
   };
 
   return (
-    <>
-      {!hasStarted && !isPlaying && !isEnded && (
-        <div className="absolute inset-0 flex justify-center z-10 pointer-events-none items-center">
-          <div className="bg-zinc-100 rounded-full p-4 z-50 transition-opacity duration-500 animate-spin">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 512 512"
-              className="w-12 h-12 fill-lime-600 mirror"
-            >
-              <path d="M496 256C496 294.266 486.781 332.312 469.312 366.062C465.062 374.312 456.656 379.031 447.969 379.031C444.281 379.031 440.5 378.187 436.969 376.344C425.187 370.25 420.594 355.781 426.687 344C440.844 316.672 448 287.062 448 256C448 150.125 361.875 64 256 64C242.75 64 232 53.25 232 40S242.75 16 256 16C388.344 16 496 123.656 496 256Z" />
-            </svg>
-          </div>
-        </div>
-      )}
+    <div className="relative">
       <video
         id={"hero"}
         ref={videoRef}
         src="hero-movie.mp4"
+        poster="/video-first-frame.jpg"
         autoPlay
         playsInline
         muted
@@ -77,6 +65,21 @@ export default function VideoHero() {
           minHeight: "90svh",
         }}
       />
+
+      {!hasStarted && !isPlaying && !isEnded && (
+        <div className="absolute inset-0 flex justify-center z-10 pointer-events-none items-center">
+          <div className="bg-zinc-100 rounded-full p-4 z-50 transition-opacity duration-500 animate-spin">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 512 512"
+              className="w-12 h-12 fill-lime-600 mirror"
+            >
+              <path d="M496 256C496 294.266 486.781 332.312 469.312 366.062C465.062 374.312 456.656 379.031 447.969 379.031C444.281 379.031 440.5 378.187 436.969 376.344C425.187 370.25 420.594 355.781 426.687 344C440.844 316.672 448 287.062 448 256C448 150.125 361.875 64 256 64C242.75 64 232 53.25 232 40S242.75 16 256 16C388.344 16 496 123.656 496 256Z" />
+            </svg>
+          </div>
+        </div>
+      )}
+
       {isEnded && (
         <div className="absolute inset-0 flex justify-center items-center">
           <button
@@ -97,6 +100,6 @@ export default function VideoHero() {
           </button>
         </div>
       )}
-    </>
+    </div>
   );
 }

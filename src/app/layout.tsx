@@ -16,6 +16,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Sycamore Hill Vineyard",
   description: "A New Jersey Family Vineyard",
+  openGraph: {
+    type: "website",
+    url: "https://www.sycamorehillnj.com/",
+    title: "Sycamore Hill Vineyard",
+    description: "A New Jersey Family Vineyard",
+    images: [
+      {
+        url: "https://www.sycamorehillnj.com/video-first-frame.jpg", // Absolute URL required
+        width: 1280,
+        height: 720,
+        alt: "Hero Image",
+      },
+    ],
+  },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
@@ -41,6 +55,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/video-first-frame.jpg"
+          type="image/jpeg"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden"`}
       >
