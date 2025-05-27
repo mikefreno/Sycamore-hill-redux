@@ -138,9 +138,7 @@ export default function ContactPage() {
                 <p className="text-sm opacity-90 mb-1">
                   Woolwich Township, New Jersey
                 </p>
-                <p className="text-sm opacity-90">
-                  bob@sycamorehillvineyard.com
-                </p>
+                <p className="text-sm opacity-90">bob@sycamorehillnj.com</p>
               </div>
             </div>
 
