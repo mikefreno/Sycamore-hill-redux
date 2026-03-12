@@ -85,6 +85,11 @@ export default function ContactPage() {
             }
             timerIdRef.current = setInterval(() => calcRemainder(timer), 1000);
           }
+        } else if (result === "EMAIL_CONFIGURATION_ERROR") {
+          setIsSuccess(false);
+          setSendRes(
+            "Our contact form is temporarily unavailable. Please email us directly at bob@sycamorehillnj.com",
+          );
         } else {
           setIsSuccess(false);
           setSendRes(

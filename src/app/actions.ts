@@ -1,5 +1,6 @@
 "use server";
 import { cookies } from "next/headers";
+import { logContactFormSubmission } from "@/lib/logger";
 
 interface ContactRequest {
   name: string;
@@ -17,9 +18,24 @@ export async function sendContactRequest({
     const expires = new Date(contactExp?.value);
     remaining = expires.getTime() - Date.now();
   }
+  const timestamp = new Date();
+
   if (remaining <= 0) {
     if (message && message.length <= 500) {
-      const apiKey = process.env.BREVO_KEY as string;
+      const apiKey = process.env.BREVO_KEY;
+
+      if (!apiKey) {
+        console.error("BREVO_KEY environment variable is not configured");
+        await logContactFormSubmission({
+          name,
+          email,
+          message,
+          timestamp,
+          success: false,
+        });
+        return "EMAIL_CONFIGURATION_ERROR";
+      }
+
       const apiUrl = "https://api.brevo.com/v3/smtp/email";
 
       const brevoData = {
@@ -36,7 +52,7 @@ export async function sendContactRequest({
         subject: `Sycamore Hill Contact Request`,
       };
       try {
-        await fetch(apiUrl, {
+        const response = await fetch(apiUrl, {
           method: "POST",
           headers: {
             accept: "application/json",
@@ -45,11 +61,44 @@ export async function sendContactRequest({
           },
           body: JSON.stringify(brevoData),
         });
+
+        if (!response.ok) {
+          const errorText = await response.text().catch(() => "Unknown error");
+          console.error(
+            `Brevo API error: ${response.status} ${response.statusText}`,
+            errorText,
+          );
+          await logContactFormSubmission({
+            name,
+            email,
+            message,
+            timestamp,
+            success: false,
+          });
+          return "SMTP server error: Sorry! You can reach us at bob@sycamorehillnj.com";
+        }
+
         const exp = new Date(Date.now() + 1 * 60 * 1000);
         (await cookies()).set("contactRequestSent", exp.toUTCString());
+
+        await logContactFormSubmission({
+          name,
+          email,
+          message,
+          timestamp,
+          success: true,
+        });
+
         return "email sent";
       } catch (e) {
-        console.log(e);
+        console.error("Failed to send contact request:", e);
+        await logContactFormSubmission({
+          name,
+          email,
+          message,
+          timestamp,
+          success: false,
+        });
         return "SMTP server error: Sorry! You can reach us at bob@sycamorehillnj.com";
       }
     }
